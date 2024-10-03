@@ -120,11 +120,12 @@ import (
 
 func RemoveConsecutives(array_inicial []int) []int {
 
-	//Inicializamos la suma
+	//Inicializamos las variables
 	sum_actual := 0
+	longitud_array_incial := len(array_inicial)
 
 	//Inicilizamos un flag
-	posicion_a_eliminar := len(array_inicial) + 1
+	posicion_a_eliminar := longitud_array_incial + 1
 
 	//Mensaje a retornar
 	nuevo_array := []int{}
@@ -134,7 +135,7 @@ func RemoveConsecutives(array_inicial []int) []int {
 
 		//Si se tomo el valor de esta posicion, iterara al siguiente ciclo
 		if i == posicion_a_eliminar {
-			posicion_a_eliminar = len(array_inicial) + 1
+			posicion_a_eliminar = longitud_array_incial + 1
 			continue
 		}
 
@@ -148,7 +149,7 @@ func RemoveConsecutives(array_inicial []int) []int {
 			nuevo_array = append(nuevo_array, array_inicial[i+1])
 
 			//Almacenamos la posicion del valor a ignorar (eliminar)
-			if i+1 <= len(array_inicial) {
+			if i+1 <= longitud_array_incial {
 				posicion_a_eliminar = i + 1
 			}
 
